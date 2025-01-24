@@ -19,7 +19,7 @@ connectCloudinary();
 //middleware
 app.use(express.json());
 // app.use(cors());//using abackend any IP
-const allowedOrigins = ['https://ecomm-app-swart.vercel.app', 'http://localhost:3000'];
+const allowedOrigins = ['https://ecomm-app-swart.vercel.app', 'http://localhost:4000'];
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {

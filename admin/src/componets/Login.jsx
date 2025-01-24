@@ -22,7 +22,7 @@ const Login = ({setToken}) => {
             }  
         } catch (error) {
             console.log(error);
-            toast.error(res.data.message);
+            toast.error(error);
             
         }
     }
