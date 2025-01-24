@@ -21,6 +21,7 @@ app.use(express.json());
 app.use(cors());//using abackend any IP
 
 
+
 //API Endpoints
 
 app.get('/',(req,res)=>{
