@@ -18,6 +18,7 @@ export const ShopContextProvider = (props) => {
     const [products, setProducts] = useState([]);
     const [isDarkMode, setIsDarkMode] = useState(false);
     const navigate = useNavigate();
+    const [visible, setVisible] = useState(false);
 
 
 
@@ -198,7 +199,9 @@ export const ShopContextProvider = (props) => {
         setProducts,
         token,
         setToken,
-        setCartItem
+        setCartItem,
+        visible,
+        setVisible
 
     }
 

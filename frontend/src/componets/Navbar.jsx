@@ -4,8 +4,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext.jsx';
 const Navbar = () => {
 
-  const [visible, setVisible] = useState(false);
-  const { setShowsearch, getCartCount, isDarkMode, setIsDarkMode, token, setToken, setCartItem, navigate } = useContext(ShopContext);
+  const { setShowsearch, getCartCount, isDarkMode, setIsDarkMode, token, setToken, setCartItem, navigate,visible, setVisible } = useContext(ShopContext);
 
 
   const logout = () => {
@@ -78,8 +77,8 @@ const Navbar = () => {
 
           <img
             onClick={() => token ? null : navigate('/login')}
-            src={assets.profile_icon}
-            className="w-5 cursor-pointer relative z-20"
+            src={ assets.profile_icon}
+            className="w-5 cursor-pointer  z-20"
             alt="Profile Icon"
           />
 
@@ -118,7 +117,7 @@ const Navbar = () => {
       </div>
       {/* {sideber menu for small screen} */}
       <div className={`absolute top-0 ring-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>
-        <div className="flex flex-col text-gray-200  dark:bg-black min-h-screen ">
+        <div className="flex flex-col text-black  dark:bg-black min-h-screen dark:text-fuchsia-50  ">
           <div onClick={() => setVisible(false)} className="flex items-center gap-4 p-3">
             <img src={assets.dropdown_icon} className='h-4 rotate-180 cursor-pointer' alt="" />
             <p>Back</p>
@@ -127,7 +126,17 @@ const Navbar = () => {
           <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border" to='/'>HOME</NavLink>
           <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border" to='/collection'>COLLECTION</NavLink>
           <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border" to='/about'>ABOUT</NavLink>
-          <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border" to='/login'>LOGIN</NavLink>
+          {
+            token ? 
+            <NavLink 
+              onClick={() => setVisible(false)} className="py-2 pl-6 border"   to="/logout"><p className='cursor-pointer' onClick={logout}>LOGOUT</p></NavLink> : 
+
+              <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border"   to="/login">Login</NavLink>
+          }
+
+          
+
+
         </div>
       </div>
 

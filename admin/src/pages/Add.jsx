@@ -242,7 +242,8 @@ const Add = ({token}) => {
         {/* for check box adding logic */}
         <input 
         checked= {bestsaller}
-        onClick={()=> setBestsaller(prev => !prev)}
+        // onClick={()=> setBestsaller(prev => !prev)}
+        onChange={()=>bestsaller ? setBestsaller(false) :setBestsaller(true)}
         type="checkbox" 
         className='cursor-pointer' 
         id='bestseller' />
