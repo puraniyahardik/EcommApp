@@ -120,7 +120,9 @@ const PlaceOrder = () => {
           
         }
         else{
-          toast.error(resstripe.data.message)
+          console.log(resstripe.data.message);
+          
+          toast.error(resstripe.data.message);
         }
 
           break;  
