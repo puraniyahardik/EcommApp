@@ -130,7 +130,6 @@ const Navbar = () => {
             token ? 
             <NavLink 
               onClick={() => setVisible(false)} className="py-2 pl-6 border"   to="/logout"><p className='cursor-pointer' onClick={logout}>LOGOUT</p></NavLink> : 
-
               <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border"   to="/login">Login</NavLink>
           }
 
